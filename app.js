@@ -73,3 +73,46 @@ const newBase = base.map(item => {
 })
 
 console.log(newBase);
+
+
+//----------------------PUSH---------------------------------------------
+//Добавляет элементы в конец массива
+let mapA = [99, 88];
+console.log(mapA);
+mapA[mapA.length] = 111;
+console.log(mapA);
+mapA.push(44);
+console.log(mapA);
+//можно добавить несколько элементов
+mapA.push(448, 555);
+console.log(mapA);
+//push может вернуть новую длину массива
+console.log(mapA.push());
+
+function hi(b) {
+  return mapA.push(b);
+}
+console.log(hi(88)); // возвращает длину массива, при этом не добавляя элемент
+hi(88);
+//--------------------------------POP---------------------
+//Метод pop удаляет последний элемент в массиве
+mapA.pop();
+console.log(mapA);
+console.log(mapA.pop())//Возвращает последний удаленный элемент
+//Когда pop удалил все элементы он возвразает undefined
+const car = [];
+document.querySelector('.add').onclick = () => {
+  let id = document.querySelector('#goods').value;
+  if (!car.includes(id)) {
+    car.push(id);
+  }
+  console.log(car);
+}
+
+document.querySelector('.pop').onclick = () => {
+  let id = document.querySelector('#goods').value;
+  let goods = car.pop();
+  console.log('Товар id' + goods + ' был удален');
+  console.log(car);
+}
+
