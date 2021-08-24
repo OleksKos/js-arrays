@@ -148,3 +148,52 @@ let debts = clients
   .filter(item => (item.debt > 10))
   .sort((a, b) => (b.debt - a.debt));
 console.log(debts);
+console.groupEnd();
+
+//----------------------------Reduce--------------------------------
+console.group('Method Reduce');
+//Используем когда хотим обработать массив и получить один результат, одно число! Reduse возвращает результат обработки массива
+
+let reduceA = [-6, -2, 3, -6];
+//ПРинимает несколько паррматров: 1 Аккумулятор или накопитель 2. Текущее значение и 3. Индекс (необязательно) и 4 сам массив (необязательно)
+let reduceB = reduceA.reduce((accum, item) => {
+  //Первое значение попадает в accum а затем по циклу проходится все остальные элементы
+  // accum = accum + ' ' + item;
+  // accum = accum + item;
+  if (item > 0) {
+    accum = accum + item;// находит сумму положительных элементов, при этом, первый элемент с которого начинается счет может быть лубым и на него не распростраянется условие
+  }
+  return accum;
+}, 0) // после функции callback можно задать с какого элемента начинать цикл применения функции колбекаю по умолчанию начинается с первого элемента а нулевой элемент попадает в 
+console.log(reduceB);
+
+//Find max
+
+let reduceM = [-6, -2, 3, 6, 16];
+let reduceMax = reduceM.reduce((accum, item) => {
+  if (item > accum) {
+    accum = item;
+  }
+  return accum;
+})
+console.log(reduceMax);
+
+//Example
+//Reduce может выполнить и функции фильтра и функции переборщика массива
+let arrayReduce = [
+  { "id": 855, "city": "Dnipro" },
+  { "id": 255, "city": "Kyiv" },
+  { "id": 195, "city": "Kharkiv" },];
+let array = arrayReduce.reduce((accum, item) => {
+  accum.push(item.id);
+  return accum;
+}, [])
+console.log(array);
+console.groupEnd();
+
+//----------------------------IsArray--------------------------------
+//IsArray - определяет является ли элемент массивом или нет. И возвращает true  или false
+console.group('Method Reduce');
+let bb = 'fgjfgfg';
+console.log(Array.isArray(arrayReduce));
+console.groupEnd();
