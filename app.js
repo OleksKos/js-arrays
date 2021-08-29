@@ -197,3 +197,35 @@ console.group('Method Reduce');
 let bb = 'fgjfgfg';
 console.log(Array.isArray(arrayReduce));
 console.groupEnd();
+
+//----------------------------Shift / Unshift---------------
+//Метод ворзвращает значение, которое он удалил из массива в начале массива. После удаления массив переиндексирует и для нескльких тысяч значений это может быть долго.
+console.group('Method Shift / Unshift');
+let arrayShift = [3, 4, 5, 55];
+let useShift = arrayShift.shift();
+// console.log(arrayShift);
+// console.log(useShift);
+
+//Unshift добавляет элемент в начало массива
+//Uhshift возвращает новую длину массива
+let useUnShift = arrayShift.unshift(22);
+console.log(arrayShift);
+console.log(useUnShift);
+
+console.groupEnd();
+
+//----------------------------Slice---------------
+//Создает новый массив, причем не меняя старый, и начинает с позиции, указанной в скобках (включительно). Если два параметра - то ОТ и ДО.
+console.group('Method Slice');
+let sliceArray = [11, 11, 55, 66, 99, 88];
+let useSlice = sliceArray.slice(3, 5);
+console.log(sliceArray);
+console.log(useSlice);
+
+let e = 'hello';
+//e.shift(); // Не работает
+e.slice(1, 4);
+console.log(e.slice(1, 4));// Работает
+
+
+console.groupEnd();
